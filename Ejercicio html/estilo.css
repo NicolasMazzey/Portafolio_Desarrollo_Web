@@ -1,3 +1,11 @@
 header {
     color: red;
 }
+h3 {
+    background-color: blue;
+    color: blanchedalmond;
+}
+#nombres {
+    font: italic small-caps bold 20px/30px Georgia, serif;
+    color: green;
+}
