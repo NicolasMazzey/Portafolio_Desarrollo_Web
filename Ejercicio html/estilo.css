@@ -22,6 +22,7 @@ h1::after {
 }
 
 .caja {
+    position: relative;
     border: 5px solid green;
 }
 
@@ -44,3 +45,14 @@ p1::after {
     font-size: x-large;
     color: blue;
 }
+
+span{
+    font-size: xx-large;
+    
+}
+
+@media (orientation: landscape) {
+    span {
+      color:red;
+    }
+  }
