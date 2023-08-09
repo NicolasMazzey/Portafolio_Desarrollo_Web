@@ -1,11 +1,42 @@
 header {
     color: red;
 }
+
 h3 {
     background-color: blue;
-    color: blanchedalmond;
+    color: black;
 }
+
 #nombres {
     font: italic small-caps bold 20px/30px Georgia, serif;
     color: green;
+}
+
+h3 + h1 {
+    color:yellow;
+}
+
+h1::after {
+    content: "Contenido";
+    color: purple;
+}
+
+.caja p {
+    color: cyan;
+}
+
+p1 ~ p2 {
+    color: pink;
+    font-size: xx-large;
+}
+
+p1 {
+    color:orange;
+    font-size: x-large;
+}
+
+p1::after {
+    content: "P1.5";
+    font-size: x-large;
+    color: blue;
 }
