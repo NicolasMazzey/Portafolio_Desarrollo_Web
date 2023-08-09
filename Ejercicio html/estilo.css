@@ -21,6 +21,10 @@ h1::after {
     color: purple;
 }
 
+.caja {
+    border: 5px solid green;
+}
+
 .caja p {
     color: cyan;
 }
