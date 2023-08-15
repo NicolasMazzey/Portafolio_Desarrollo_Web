@@ -1,0 +1,14 @@
+.card-deck > .card{
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.card{
+    width: 90%;
+    margin: auto;
+
+}
+
+body {
+    background-image: url(./imagen.png);
+}
