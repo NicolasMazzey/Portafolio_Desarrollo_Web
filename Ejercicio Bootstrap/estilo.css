@@ -1,5 +1,5 @@
 .card-deck > .card{
-    background-color: transparent;
+    background-color:skyblue;
     border-color: transparent;
 }
 
@@ -7,6 +7,12 @@
     width: 90%;
     margin: auto;
 
+}
+
+.divtitulo{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
 }
 
 body {
