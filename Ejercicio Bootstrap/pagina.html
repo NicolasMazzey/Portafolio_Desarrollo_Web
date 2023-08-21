@@ -22,113 +22,85 @@
   <div class="card-deck">
 
 
-    <div class="card">
+    <div id="ToDo" class="card">
       <div class="divtitulo">
         <span><h1>To Do</h1></span>
-        <button type="button" class="btn btn-primary">Add Task</button>
+        <button id="Add_To_Do" type="button" class="btn btn-primary">Add Task</button>
       </div>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Task 1</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Button</a>
-        </div>
-      </div>
-      <p></p>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Task 2</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Button</a>
-        </div>
-      </div>
-      <p></p>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Task 3</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Button</a>
-        </div>
-      </div>
-      <p></p>
     </div>
 
 
-    <div class="card">
+    <div id="Doing" class="card">
       <div class="divtitulo">
         <span><h1>Doing</h1></span>
-        <button type="button" class="btn btn-primary">Add Task</button>
+        <button id="Add_Doing" type="button" class="btn btn-primary">Add Task</button>
       </div>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Task 1</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Button</a>
-        </div>
-      </div>
-      <p></p>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Task 2</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Button</a>
-        </div>
-      </div>
-      <p></p>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Task 3</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Button</a>
-        </div>
-      </div>
-      <p></p>
     </div>
 
 
-    <div class="card">
+    <div id="Done" class="card">
       <div class="divtitulo">
         <span><h1>Done</h1></span>
-        <button type="button" class="btn btn-primary">Add Task</button>
+        <button id="Add_Done" type="button" class="btn btn-primary">Add Task</button>
       </div>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Task 1</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Button</a>
-        </div>
-      </div>
-      <p></p>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Task 2</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Button</a>
-        </div>
-      </div>
-      <p></p>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Task 3</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Button</a>
-        </div>
-      </div>
-      <p></p>
     </div>
   </div>
 </body>
 
+
 <script>
-function handleClick(){
-  alert('You clicked me!')
+
+function CrearCarta(columna){
+
+  const titulotarea =  prompt("Titulo de la tarea", "Tarea #")
+
+  const Contenidotarea =  prompt("Contenido de la tarea", "Descripcion")
+
+  var Carta = document.createElement("div");
+  Carta.className = "card";
+
+  var CartaBody = document.createElement("div");
+  CartaBody.className = "card-body"
+
+  var CartaTitulo = document.createElement("h5");
+  CartaTitulo.className = "card-title";
+  CartaTitulo.innerText = titulotarea;
+
+  var CartaTexto = document.createElement("p");
+  CartaTexto.className = "card-text";
+  CartaTexto.innerText = Contenidotarea;
+
+  CartaBotton = document.createElement("a");
+  CartaBotton.className = "btn btn-primary";
+  CartaBotton.setAttribute("href", "#");
+  CartaBotton.innerText = "Mas informacion";
+
+  CartaBody.appendChild(CartaTitulo);
+  CartaBody.appendChild(CartaTexto);
+  CartaBody.appendChild(CartaBotton);
+
+  Carta.appendChild(CartaBody);
+
+  var espacio = document.createElement("p")
+
+  const panel = document.getElementById(columna);
+  panel.appendChild(Carta);
+  panel.append(espacio)
 }
 
-const  myBouttons = userList.querySelector("button.btn");
-myBouttons.forEach((userItem) => {
-  userItem.addEventListener('click', handleClick);    /*no anda */
+const  myBouttonToDo = document.getElementById("Add_To_Do");
+myBouttonToDo.addEventListener('click', function() {
+  CrearCarta("ToDo")
 });
 
+const  myBouttonDoing = document.getElementById("Add_Doing");
+myBouttonDoing.addEventListener('click', function() {
+  CrearCarta("Doing")
+});
+const  myBouttonDone = document.getElementById("Add_Done");
+myBouttonDone.addEventListener('click', function() {
+  CrearCarta("Done")
+});
 
 </script>
 

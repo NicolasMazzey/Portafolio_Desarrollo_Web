@@ -1,12 +1,11 @@
 .card-deck > .card{
     background-color:skyblue;
     border-color: transparent;
-}
+    height: max-content;
+}   
 
 .card{
     width: 90%;
-    margin: auto;
-
 }
 
 .divtitulo{
@@ -14,6 +13,20 @@
     justify-content: space-between; 
     align-items: center;
 }
+
+@media (orientation: portrait) {
+    .card-deck{
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+    }
+
+    .card{
+        width: 90%;
+        margin: auto;
+    }
+  }
+
 
 body {
     background-image: url(./imagen.png);
