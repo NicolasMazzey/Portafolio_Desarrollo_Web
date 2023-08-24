@@ -27,6 +27,9 @@
         <span><h1>To Do</h1></span>
         <button id="Add_To_Do" type="button" class="btn btn-primary">Add Task</button>
       </div>
+      <div id="ToDoDrop"ondrop="drop(event)" ondragover="allowDrop(event)">
+        <p></p>
+      </div>
     </div>
 
 
@@ -34,6 +37,9 @@
       <div class="divtitulo">
         <span><h1>Doing</h1></span>
         <button id="Add_Doing" type="button" class="btn btn-primary">Add Task</button>
+      </div>
+      <div id="DoingDrop"ondrop="drop(event)" ondragover="allowDrop(event)">
+        <p></p>
       </div>
     </div>
 
@@ -43,6 +49,9 @@
         <span><h1>Done</h1></span>
         <button id="Add_Done" type="button" class="btn btn-primary">Add Task</button>
       </div>
+      <div id="DoneDrop"ondrop="drop(event)" ondragover="allowDrop(event)">
+        <p></p>
+      </div>
     </div>
   </div>
 </body>
@@ -50,14 +59,24 @@
 
 <script>
 
+var numerodecarta = 0;
+
 function CrearCarta(columna){
 
-  const titulotarea =  prompt("Titulo de la tarea", "Tarea #")
+  numerodecarta = numerodecarta +1;
 
-  const Contenidotarea =  prompt("Contenido de la tarea", "Descripcion")
+  const titulotarea =  prompt("Titulo de la tarea", "Tarea " + numerodecarta);
+
+  const Contenidotarea =  prompt("Contenido de la tarea", "Descripcion");
+
+  const InformacionAdicional =  prompt("Informacion adicional", "Informacion");
+
 
   var Carta = document.createElement("div");
   Carta.className = "card";
+  Carta.setAttribute("id", numerodecarta);
+  Carta.setAttribute("draggable", "true");
+  Carta.setAttribute("ondragstart", "drag(event)");
 
   var CartaBody = document.createElement("div");
   CartaBody.className = "card-body"
@@ -72,7 +91,7 @@ function CrearCarta(columna){
 
   CartaBotton = document.createElement("a");
   CartaBotton.className = "btn btn-primary";
-  CartaBotton.setAttribute("href", "#");
+  CartaBotton.setAttribute("href", "javascript:alert('" + InformacionAdicional +  "');");
   CartaBotton.innerText = "Mas informacion";
 
   CartaBody.appendChild(CartaTitulo);
@@ -81,11 +100,11 @@ function CrearCarta(columna){
 
   Carta.appendChild(CartaBody);
 
-  var espacio = document.createElement("p")
+  var espacio = document.createElement("p");
 
   const panel = document.getElementById(columna);
   panel.appendChild(Carta);
-  panel.append(espacio)
+  panel.append(espacio);
 }
 
 const  myBouttonToDo = document.getElementById("Add_To_Do");
@@ -102,6 +121,27 @@ myBouttonDone.addEventListener('click', function() {
   CrearCarta("Done")
 });
 
+
 </script>
+
+<script>
+  function allowDrop(ev) {
+    ev.preventDefault();
+  };
+  
+  function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+    var ns = ev.target.nextSibling;
+    ev.target.parentNode.removeChild(ns);
+  };
+  
+  function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+    var espacio = document.createElement("p");
+    ev.target.appendChild(espacio)
+  };
+  </script>
 
 </html>
