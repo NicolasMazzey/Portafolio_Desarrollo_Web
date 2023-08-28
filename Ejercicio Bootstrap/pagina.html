@@ -19,7 +19,7 @@
 
 <body>
   <p>&nbsp;</p>
-  <div class="card-deck">
+  <div id="deckmain" class="card-deck">
 
 
     <div id="ToDo" class="card">
@@ -52,8 +52,29 @@
       <div id="DoneDrop"ondrop="drop(event)" ondragover="allowDrop(event)">
         <p></p>
       </div>
+
+      <style>
+        .columns {
+          display: flex;
+          justify-content: space-around;
+        }
+      </style>
+      
+      <!--
+      <div class="columns">
+        <ul id="pokemons">
+          <h2>Pokemon</h2>
+        </ul>
+    
+        <div id="detail">
+          <h2>Detail</h2>
+        </div>
+      </div> -->
+
+
     </div>
   </div>
+
 </body>
 
 
@@ -138,10 +159,83 @@ myBouttonDone.addEventListener('click', function() {
   function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
+    ev.target.parentNode.appendChild(document.getElementById(data));
     var espacio = document.createElement("p");
-    ev.target.appendChild(espacio)
+    ev.target.parentNode.appendChild(espacio)
   };
   </script>
+
+
+<script>
+ /* const baseUrl = 'https://pokeapi.co/api/v2/pokemon'
+  try {
+    fetch(baseUrl)
+      .then(response => {
+        const responseJson = response.json()
+        return responseJson
+      })
+      .then(data => {
+        const pokemons = data.results
+        pokemons.forEach(pokemon => {
+            document.getElementById('pokemons')
+              .insertAdjacentHTML('beforeend', `<li onclick='detail("${pokemon.url}")'>${pokemon.name}</li>`)
+          })
+      })
+      .catch(error => {
+        console.error(error)
+      })
+  } catch (error) {
+    console.error(error)
+  }
+  
+ const detail = (url) => {
+    try {
+      fetch(url)
+        .then(response => response.json())                        
+        .then(pokemon => {
+          document.getElementById('detail').innerHTML = ''
+          document.getElementById('detail')
+            .insertAdjacentHTML('beforeend', 
+              `
+                <h1>${pokemon.name}</h1>
+                <img src="${pokemon.sprites.front_default}" />
+              `
+            )
+        })
+        .catch(error => {
+          console.error(error)
+        })
+    } catch (error) {
+      console.error(error)
+    }
+  }*/
+</script>
+
+<script>
+  const baseUrl2 = 'https://pokeapi.co/api/v2/pokemon/pikachu'
+
+  const detail2 = (url) => {
+    try {
+      fetch(url)
+        .then(response => response.json())                        
+        .then(pokemon => {
+          document.getElementById('ToDoDrop')
+            .insertAdjacentHTML('afterend', 
+              `
+                <img id = "pikachugigante" draggable = "true" ondragstart = "drag(event)" src="${pokemon.sprites.other.home.front_shiny}" />
+              `
+            )
+        })
+        .catch(error => {
+          console.error(error)
+        })
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  detail2(baseUrl2)
+
+</script>
 
 </html>
