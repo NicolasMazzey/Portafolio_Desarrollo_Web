@@ -1,0 +1,30 @@
+<app-header (searchEvent)="fetchResults($event)"></app-header>
+
+<mat-sidenav-container>
+
+	<!-- The side nav -->
+  <mat-sidenav #drawer fixedInViewport="true" [mode]="'side'" [opened]="true">
+    <app-nav-bar></app-nav-bar>
+  </mat-sidenav>
+	<!-- EO: Side nav-->
+
+	<!-- Side nav content-->
+	<mat-sidenav-content (scroll)="onScroll($event)">
+    
+    <div class="content">
+      <mat-grid-list cols= {{breakpoint}} (window:resize)="onResize($event)">
+        <div *ngFor="let juego of juegos">
+          <mat-grid-tile *ngIf="juego.name.toLowerCase().includes(searchTerms.toLowerCase());">
+            <app-carta-juego [datos]="juego" [nombre]=juego.name [imagen]=juego.background_image></app-carta-juego>
+          </mat-grid-tile>
+        </div>
+      </mat-grid-list>
+    </div>
+
+
+  </mat-sidenav-content>
+  <!-- EO: Side nav content-->
+
+</mat-sidenav-container>
+
+<app-footer></app-footer>

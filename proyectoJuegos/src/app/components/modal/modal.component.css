@@ -1,0 +1,41 @@
+:host {
+    position: fixed;
+    background: #fff;
+    left: 35%;
+    top: 10%;
+    border-radius: 8px;
+    padding: 16px;
+    max-width: 500px;
+    z-index: 200;
+    animation: custom-dialog-enter 1s ease;
+  }
+
+.titulomodal{
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+}
+
+.material-icons {
+  vertical-align: bottom;
+}
+
+@media only screen and (max-width: 600px) {
+
+  /* phones */
+  :host {
+    left: 5%;
+    top: 5%;
+    width: 80%;
+  }
+}
+
+
+@media screen and (min-width:600px) and (max-width:1200px) {
+
+  /* tablets horizontal */
+  :host {
+    left: 20%;
+    top: 5%;
+  }
+}

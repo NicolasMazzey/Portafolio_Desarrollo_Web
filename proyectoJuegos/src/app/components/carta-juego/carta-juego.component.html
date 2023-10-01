@@ -1,0 +1,11 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{nombre}}</mat-card-title>
+  </mat-card-header>
+    
+  <img mat-card-image src={{imagen}}>
+    
+  <mat-card-actions>
+    <button mat-button (click)="openDialog(this.datos)">Informacion del Juego</button>
+  </mat-card-actions>
+</mat-card>

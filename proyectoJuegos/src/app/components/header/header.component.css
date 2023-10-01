@@ -1,0 +1,46 @@
+.frame{
+    background-color:dodgerblue;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+img{
+    display:block;
+    max-width: 3.5vw;
+}
+
+span{
+    font-size: 3vw;
+}
+
+.menucelular{
+    display: none;
+}
+
+@media only screen and (max-width: 600px) { /* phones */
+    .titulo {
+        display: none;
+        font-size: 7vw;
+    }
+    .menucelular {
+        display: flex;
+    }
+    ::ng-deep .desplegable{
+      margin-top: 10vw;
+    }
+}
+  
+  
+  @media screen and (min-width:600px) and (max-width:1200px){  /* tablets horizontal */
+    mat-card-header {
+      font-size: 2.5vw;
+    }
+    .menucelular{
+      display: flex;
+      font-size: 2vw;
+    }
+    ::ng-deep .desplegable{
+      margin-top: 5vw;
+    }
+  }

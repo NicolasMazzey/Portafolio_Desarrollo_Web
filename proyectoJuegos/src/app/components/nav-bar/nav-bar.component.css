@@ -1,0 +1,25 @@
+mat-nav-list{
+  color:  black;
+  width: 10vw;
+  height: 100%;
+  background-color:paleturquoise;
+  font-size:xx-large;
+}
+a{
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) { /* phones */
+  mat-nav-list{
+    width: 20vw;
+    font-size:5vw;
+  }
+}
+
+
+@media screen and (min-width:600px) and (max-width:1200px){  /* tablets horizontal */
+  mat-nav-list{
+    width: 15vw;
+    font-size: 4vw;
+  }
+}

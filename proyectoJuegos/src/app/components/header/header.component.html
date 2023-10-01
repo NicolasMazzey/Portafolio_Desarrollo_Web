@@ -1,0 +1,17 @@
+<div class="frame">
+    <div class = "menucelular">
+    <button mat-mini-fab color="primary" [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu backdropClass="desplegable" #menu="matMenu">
+        <app-nav-bar></app-nav-bar>
+        <!-- Poner la nav ba aca terminar los links, subirle el index a la lista de juegos-->
+    </mat-menu>
+    </div>
+
+    <span class="titulo">{{title}}</span>
+    <app-search-bar (searchEvent)="onSubmit($event)"></app-search-bar>
+    <a href="https://rawg.io/apidocs">
+        <img class="logo" src= {{logo}} />
+    </a>
+</div>

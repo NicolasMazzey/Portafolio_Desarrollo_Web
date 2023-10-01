@@ -1,0 +1,70 @@
+footer {
+    -webkit-tap-highlight-color: transparent;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    font-family: Inter, sans-serif;
+    color: black;
+    background-color: white;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    line-height: 20px;
+}
+
+.logo{
+    transition: all .2s ease-out;
+    position: relative;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 5px;
+    text-decoration: none;
+    background-image: none;
+    color: #000;
+    background-color: white;
+}
+
+.apidocs-socials,.apidocs-socials__link {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.apidocs-socials__link {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    line-height: 0;
+    border: 1px solid #ccc;
+    color: black;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 12px
+}
+
+.apidocs-socials__link svg {
+    fill: currentColor
+}
+
+.apidocs-socials__link:not(:last-of-type) {
+    margin-right: 12px
+}
+
+.apidocs-socials__link:hover {
+    color: #fff;
+    background-color: #005ff9;
+    border: none
+}
+

@@ -1,0 +1,137 @@
+.content{
+  position: relative;
+  z-index: 90;
+  margin-left: 10%;
+}
+
+app-header{
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+app-footer{
+  position: fixed;
+  bottom: 0px;
+  z-index: 100;
+  width: 100%;
+}
+
+mat-sidenav-container{
+  position: fixed;
+  top: 50px;
+  z-index: 90;
+  width: 100%;
+  bottom: 50px;
+}
+
+app-nav-bar{
+  position: fixed;
+  height: 100%;
+  top: 50px;
+  z-index: 90;
+  width: 10%;
+}
+
+app-modal{
+  position: fixed;
+  z-index: 110;
+}
+
+.mat-sidenav-content::-webkit-scrollbar {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {  /* phones */
+  app-header{
+    .frame{
+      height: 12vw;
+    }
+    .logo{
+      max-width: 12vw;
+    }
+    .titulo{
+      font-size: 4.5vw;
+    }
+    .label{
+      font-size: 4.5vw;
+    }
+    #search-box{
+      height: 5vw;
+      width: 30vw;
+    }
+  }
+  mat-sidenav-container{
+    top: 12vw;
+    bottom: 10vw;
+  }
+  app-footer{
+      font-size: 2.5vw;
+  }
+  app-carta-juego{
+    max-width: 90vw;
+    min-width: 90vw;
+    min-height: 50vw;
+  }
+  .content{
+    margin-left: 0%;
+  }
+  app-nav-bar{
+    display: none;
+  }
+  ::ng-deep .cdk-overlay-container {
+    position: fixed; 
+    z-index: 120;
+  }
+}
+
+
+@media screen and (min-width:600px) and (max-width:1200px){  /* tablets horizontal */
+  app-header{
+    .frame{
+      height: 6vw;
+    }
+    .logo{
+      max-width: 5vw;
+    }
+    .titulo{
+      font-size: 4.5vw;
+    }
+    .label{
+        font-size: 3vw;
+    }
+    #search-box{
+      height: 2.5vw;
+      width: 20vw;
+    }
+  }
+  mat-sidenav-container{
+    top: 6vw;
+    bottom: 5vw;
+  }
+  app-footer{
+      font-size: 3vw;
+  }
+  app-carta-juego{
+    max-width: 40vw;
+    min-width: 40vw;
+    min-height: 10vw;
+  }
+  .content{
+    margin-left: 0%;
+  }
+  app-nav-bar{
+    display: none;
+  }
+  ::ng-deep .cdk-overlay-container {
+    position: fixed; 
+    z-index: 120;
+  }
+}
+
+@media only screen and (min-width: 1200px) { /* laptops */
+  app-footer{
+      font-size: 2vw;
+  }
+}

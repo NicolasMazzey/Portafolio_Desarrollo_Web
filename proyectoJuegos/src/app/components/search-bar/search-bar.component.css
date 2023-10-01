@@ -1,0 +1,12 @@
+div{
+    font-size: 2.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+input{
+    height: 1.5vw;
+    width: 15vw;
+}

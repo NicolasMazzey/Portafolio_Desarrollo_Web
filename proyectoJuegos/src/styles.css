@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+html, body { padding: 0; margin: 0;} 
+
+body{
+    background: url("https://img.freepik.com/free-vector/abstract-realistic-technology-particle-background_52683-33064.jpg?w=1060&t=st=1695249781~exp=1695250381~hmac=6ebb9507c990079517e1dbc0bc29418dfd6f946004a8e5a9a22f4bec368ea8c2")
+     no-repeat center center fixed #000;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+}

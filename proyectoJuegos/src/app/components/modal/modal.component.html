@@ -1,0 +1,13 @@
+<div class = "modal">
+    <div class="titulomodal">
+    <span><h2 mat-dialog-title>{{juego.name}}</h2></span>
+    <span>{{juego.rating}} <mat-icon line-height = "1">star</mat-icon></span>
+    </div>
+    <mat-dialog-content class="mat-typography">
+    <div [innerHTML]="juego.description"></div>
+
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Close</button>
+    </mat-dialog-actions>
+</div>
